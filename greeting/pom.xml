@@ -65,21 +65,13 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <groupId>org.eclipse.jkube</groupId>
                 <artifactId>openshift-maven-plugin</artifactId>
                 <version>${jkube.version}</version>
-                <configuration>
-                    <images>
-                        <image>
-                            <name>greeting-java:${project.version}</name>
-                            <alias>greeting</alias>
-                            <build>
-                                <from>openjdk:latest</from>
-                                <cmd>java -jar maven/${project.artifactId}-${project.version}.jar</cmd>
-                            </build>
-                        </image>
-                    </images>
-                </configuration>
             </plugin>
         </plugins>
     </build>
